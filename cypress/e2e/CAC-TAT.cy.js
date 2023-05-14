@@ -53,8 +53,8 @@ describe('Central de Atendimento ao Cliente TAT', () => {
     cy.get('.error').should('be.visible')
   })
 
-  // Preencha e limpe os campos nome, sobrenome, email e tefone
-  it('Preencha e limpe os campos nome, sobrenome, email e tefone', ()=>{
+  // Preencha e limpe os campos nome, sobrenome, email e telefone
+  it('Preencha e limpe os campos nome, sobrenome, email e telefone', ()=>{
     cy.get('#firstName').type('Emerson').should('have.value','Emerson').clear().should('have.value', '')
     cy.get('#lastName').type('Patryck').should('have.value','Patryck').clear().should('have.value', '')
     cy.get('#email').type('emeps@ex.com').should('have.value','emeps@ex.com').clear().should('have.value', '')
@@ -160,4 +160,23 @@ describe('Uploads de Arquivos',()=>{
     })
   })
 
+})
+
+describe('Trabalhar com links',()=>{
+  beforeEach(()=>{
+    cy.visit('http://127.0.0.1:5500/src/index.html')
+  })
+
+  it('Verifica se a politica de privacidade abre em outra aba sem a necessidade de clicar', ()=>{
+    cy.get('#privacy a').should('have.attr', 'target', '_blank')
+  })
+  
+  it('Acessa a pagina da politica de privacidade removendo o target e então clicando no link', ()=>{
+    cy.get('#privacy a').invoke('removeAttr', 'target').click()
+    cy.contains('Talking About Testing').should('be.visible')
+  })
+  
+  it('Testa a página de politica de privacidade de forma independente', ()=>{
+
+  })
 })
