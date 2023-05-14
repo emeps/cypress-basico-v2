@@ -1,6 +1,6 @@
 describe('Central de Atendimento ao Cliente TAT', () => { 
   beforeEach(()=>{
-    cy.visit('http://127.0.0.1:5500/src/index.html')
+    cy.visit('./src/index.html')
   })
 
 
@@ -82,7 +82,7 @@ describe('Central de Atendimento ao Cliente TAT', () => {
 
 describe('Selecionando opções em campos de seleção suspensa',()=>{
   beforeEach(()=>{
-    cy.visit('http://127.0.0.1:5500/src/index.html')
+    cy.visit('./src/index.html')
   })
 
   it('Buscar dentro do campo Produto a opção de Blog', ()=>{
@@ -103,7 +103,7 @@ describe('Selecionando opções em campos de seleção suspensa',()=>{
 
 describe('Marcando inputs do tipo radio',()=>{
   beforeEach(()=>{
-    cy.visit('http://127.0.0.1:5500/src/index.html')
+    cy.visit('./src/index.html')
   })
 
   it('Marca o tipo de atendimento "Feedback"', ()=>{
@@ -120,7 +120,7 @@ describe('Marcando inputs do tipo radio',()=>{
 
 describe('Marcando e desmarcando checkboxes',()=>{
   beforeEach(()=>{
-    cy.visit('http://127.0.0.1:5500/src/index.html')
+    cy.visit('./src/index.html')
   })
 
   it('Marcando ambos os checkboxes e desmarcando o ultimo', ()=>{
@@ -136,7 +136,7 @@ describe('Marcando e desmarcando checkboxes',()=>{
 
 describe('Uploads de Arquivos',()=>{
   beforeEach(()=>{
-    cy.visit('http://127.0.0.1:5500/src/index.html')
+    cy.visit('./src/index.html')
   })
 
   it('Seleciona um arquivo da pasta fixtures', ()=>{
@@ -164,7 +164,7 @@ describe('Uploads de Arquivos',()=>{
 
 describe('Trabalhar com links',()=>{
   beforeEach(()=>{
-    cy.visit('http://127.0.0.1:5500/src/index.html')
+    cy.visit('./src/index.html')
   })
 
   it('Verifica se a politica de privacidade abre em outra aba sem a necessidade de clicar', ()=>{
