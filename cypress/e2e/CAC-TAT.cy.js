@@ -3,7 +3,6 @@ describe('Central de Atendimento ao Cliente TAT', () => {
     cy.visit('./src/index.html')
   })
 
-
   // Verifica se o titulo é o indicado
   it('Verifica o título da aplicação', ()=>{
     cy.title().should('be.equal', 'Central de Atendimento ao Cliente TAT')
