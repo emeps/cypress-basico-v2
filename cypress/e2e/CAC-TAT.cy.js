@@ -179,3 +179,25 @@ describe('Trabalhar com links',()=>{
 
   })
 })
+
+describe('Trabalhando com tempo',()=>{
+  beforeEach(()=>{
+    cy.visit('./src/index.html')
+  })
+
+  it('Congela o clock do navegador e depois avaça 3 segundos no tempo', ()=>{
+    cy.clock();
+    cy.get('#firstName').type('Emerson')
+    cy.get('#lastName').type('Patryck')
+    cy.get('#email').type('emeps@ex.com')
+    cy.get('#open-text-area').type('Teste Lorem Psum', {delay: 0})
+    cy.get('button[type="submit"]').click()
+
+    cy.get('.success').should('be.visible')
+    cy.tick(3000);
+    cy.get('.success').should('not.be.visible')
+
+  })
+  
+})
+
